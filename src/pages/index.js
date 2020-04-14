@@ -19,7 +19,16 @@ class App extends Component {
     render() {
         return (
             <Layout className={Style.app}>
-                <Sider>Sider</Sider>
+                <Sider
+                    breakpoint="lg"
+                    collapsedWidth="0"
+                    onBreakpoint={broken => {
+                        console.log(broken);
+                    }}
+                    onCollapse={(collapsed, type) => {
+                        console.log(collapsed, type);
+                    }}
+                >Sider</Sider>
                 <Layout>
                     <Header>Header</Header>
                     <Content>
